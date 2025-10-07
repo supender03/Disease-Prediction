@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Disease Prediction</h1>
+    <form action="/predict" method="POST">
+        <input type="text" name="symptoms" placeholder="Enter symptoms separated by commas" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if predictions %}
+    <div class="results">
+        <p><strong>Random Forest Prediction:</strong> {{ predictions.rf_model_prediction }}</p>
+        <p><strong>Naive Bayes Prediction:</strong> {{ predictions.naive_bayes_prediction }}</p>
+        <p><strong>SVM Prediction:</strong> {{ predictions.svm_model_prediction }}</p>
+        <p><strong>Final Prediction:</strong> {{ predictions.final_prediction }}</p>
+    </div>
+    {% elif error %}
+    <div class="results">
+        <p style="color:red;">{{ error }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
