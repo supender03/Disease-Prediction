@@ -11,31 +11,9 @@ A web-based application that predicts possible diseases based on user-reported s
 - User-friendly web interface  
 - Real-time analysis of symptoms  
 
----
-
-## Project Structure
-
-Disease-Prediction/
-├── app.py # Main Flask application
-
-├── Disease_Prediction.ipynb # Jupyter notebook for training
-
-├── templates/ # HTML templates
-
-│ ├── index.html
-
-│ └── result.html
-
-├── static/ # CSS, JS, images
-
-├── training.csv # Training dataset
-
-└── testing.csv # Testing dataset
----
-
 ## Getting Started
 
-Follow these steps to set up and run the Book Recommendation System locally:
+Follow these steps to set up and run the Disease Prediction System locally:
 
 ### Step 1: Clone the Repository
 ```bash
